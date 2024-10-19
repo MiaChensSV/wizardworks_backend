@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("wizardworks_backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+912ae01667994a9624cf1293b5bed5c963e3c636")]
 [assembly: System.Reflection.AssemblyProductAttribute("wizardworks_backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("wizardworks_backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

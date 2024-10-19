@@ -30,3 +30,5 @@ C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Debug\ne
 C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Debug\net8.0\wizardworks_backend.pdb
 C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Debug\net8.0\wizardworks_backend.genruntimeconfig.cache
 C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Debug\net8.0\ref\wizardworks_backend.dll
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Debug\net8.0\wizardworks_backend.sourcelink.json
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\bin\Debug\net8.0\Data\DataStorage.json

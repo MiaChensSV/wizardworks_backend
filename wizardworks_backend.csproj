@@ -7,11 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <Compile Remove="Controllers\新文件夹\**" />
+    <Compile Remove="新文件夹\**" />
+    <Content Remove="Controllers\新文件夹\**" />
+    <Content Remove="新文件夹\**" />
+    <EmbeddedResource Remove="Controllers\新文件夹\**" />
+    <EmbeddedResource Remove="新文件夹\**" />
+    <None Remove="Controllers\新文件夹\**" />
+    <None Remove="新文件夹\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
 </Project>

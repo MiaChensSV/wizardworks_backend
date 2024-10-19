@@ -1,18 +1,8 @@
 [
   {
     "ContainingType": "wizardworks_backend.Controllers.BlockController",
-    "Method": "GetBoxesResultAsync",
-    "RelativePath": "api/Block",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "wizardworks_backend.Controllers.BlockController",
     "Method": "AddBlock",
-    "RelativePath": "api/Block",
+    "RelativePath": "addBlock",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -26,16 +16,26 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "wizardworks_backend.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "wizardworks_backend.Controllers.BlockController",
+    "Method": "ClearBlocksState",
+    "RelativePath": "clearBlocksState",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "wizardworks_backend.Controllers.BlockController",
+    "Method": "GetBoardData",
+    "RelativePath": "getBoardData",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[wizardworks_backend.WeatherForecast, wizardworks_backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "wizardworks_backend.Model.BoardDataModel",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -43,7 +43,6 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetWeatherForecast"
+    ]
   }
 ]
