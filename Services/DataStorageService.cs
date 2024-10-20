@@ -30,7 +30,6 @@ namespace wizardworks_backend.Service
             }
 
         }
-
         public void AddBlockToBoardState(BlockModel block)
         {
             try
@@ -44,7 +43,6 @@ namespace wizardworks_backend.Service
                 throw;
             }
         }
-
         public void DeleteBlocksState()
         {
             try
@@ -73,7 +71,6 @@ namespace wizardworks_backend.Service
                 throw new DataStorageException("Fail to initialize the file.");
             }
         }
-
         private void ReadModelFromFile()
         {
             try
@@ -106,17 +103,14 @@ namespace wizardworks_backend.Service
             }
 
         }
-
-        private async void WriteModelToFile()
+        private void WriteModelToFile()
         {
             if (_boardData == null || !File.Exists(_filePath))
             {
                 throw new DataStorageException("Fail to write data to file.");
             };
             string boardDataStr = JsonSerializer.Serialize(_boardData);
-            await File.WriteAllTextAsync(_filePath, boardDataStr);
-        }
-
-         
+            File.WriteAllText(_filePath, boardDataStr);
+        }         
     }
 }

@@ -2,7 +2,7 @@
   {
     "ContainingType": "wizardworks_backend.Controllers.BlockController",
     "Method": "AddBlock",
-    "RelativePath": "addBlock",
+    "RelativePath": "api/Block/AddBlock",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -13,22 +13,42 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[wizardworks_backend.Model.BlockModel, wizardworks_backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "wizardworks_backend.Controllers.BlockController",
     "Method": "ClearBlocksState",
-    "RelativePath": "clearBlocksState",
+    "RelativePath": "api/Block/ClearBlocksState",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[wizardworks_backend.Model.BlockModel, wizardworks_backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "wizardworks_backend.Controllers.BlockController",
     "Method": "GetBoardData",
-    "RelativePath": "getBoardData",
+    "RelativePath": "api/Block/GetBoardData",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

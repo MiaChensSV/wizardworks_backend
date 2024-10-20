@@ -18,7 +18,7 @@ namespace wizardworks_backend.Controllers
             _dataStorageService = dataStorageService;
         }
 
-        [HttpGet("/getBoardData")]
+        [HttpGet("GetBoardData")]
         public ActionResult<BoardDataModel> GetBoardData()
         {
             try
@@ -32,11 +32,10 @@ namespace wizardworks_backend.Controllers
             {
                 return StatusCode(500, "Unknown error.");
             }
-            
         }
 
-        [HttpPost("/addBlock")]
-        public ActionResult AddBlock([FromBody] BlockModel block)
+        [HttpPost("AddBlock")]
+        public ActionResult<List<BlockModel>> AddBlock([FromBody] BlockModel block)
         {
             try
             {
@@ -44,11 +43,11 @@ namespace wizardworks_backend.Controllers
                 {
                     return BadRequest("Block can not be null");
                 }
-
                 // Get existing board status
-                BoardDataModel boardData = this._dataStorageService.GetBoardData();
-                List<BlockModel> boardState = boardData.BlocksState;
-                string[] availableColors = boardData.AvaiableColors;
+                BoardDataModel boardData = _dataStorageService.GetBoardData();
+                List<BlockModel> blocksState = boardData.BlocksState;
+
+                string[] availableColors = boardData.AvailableColors;
 
                 // Verify if color is valid.
                 if (!availableColors.Contains(block.Color))
@@ -56,16 +55,25 @@ namespace wizardworks_backend.Controllers
                     return UnprocessableEntity("Block has invalid color.");
                 }
 
+                if (blocksState.Count > 0)
+                {
+                    BlockModel lastBlock = boardData.BlocksState.LastOrDefault<BlockModel>()!;
+                    if (block.Color == lastBlock.Color)
+                    {
+                        return UnprocessableEntity("The new block has the same color with the current last block");
+                    }
+                }
+
                 // Verify if position is valid
                 // If no existing blocks, New block's osition must be 1 
-                if (boardState.Count == 0 && block.Position != 1)
+                if (blocksState.Count == 0 && block.Position != 1)
                 {
                     return UnprocessableEntity("Block has invalid position.");
                 }
                 // If has block, New position must be increament.
-                else if (boardState.Count > 0)
+                else if (blocksState.Count > 0)
                 {
-                    int currentMaxPosition = boardState.Max(block => block.Position);
+                    int currentMaxPosition = blocksState.Max(block => block.Position);
                     if (block.Position != currentMaxPosition + 1)
                     {
                         return UnprocessableEntity("Block has invalid position.");
@@ -73,24 +81,27 @@ namespace wizardworks_backend.Controllers
                 }
 
                 // Add the block to file storage
-                this._dataStorageService.AddBlockToBoardState(block);
+                _dataStorageService.AddBlockToBoardState(block);
+                BoardDataModel latestBoardData = _dataStorageService.GetBoardData();
+                List<BlockModel> latestBlocksState = latestBoardData.BlocksState;
+                return Ok(latestBlocksState);
             }
             catch (DataStorageException exc)
             {
                 return StatusCode(500, exc.Message);
-            }
-       
-
-            return Ok(new { message = "Block added successfully" });
+            }      
+            
         }
 
-        [HttpDelete("/clearBlocksState")]
-        public ActionResult ClearBlocksState()
+        [HttpDelete("ClearBlocksState")]
+        public ActionResult<List<BlockModel>> ClearBlocksState()
         {
             try
             {
-                this._dataStorageService.DeleteBlocksState();
-                return StatusCode(200, "All blocks has been cleared");
+                _dataStorageService.DeleteBlocksState();
+                BoardDataModel latestBlocksState = _dataStorageService.GetBoardData();
+                List<BlockModel> latestBlockState = latestBlocksState.BlocksState;
+                return StatusCode(200, latestBlockState);
             }
             catch (DataStorageException exc)
             {
