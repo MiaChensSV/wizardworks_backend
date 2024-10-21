@@ -1,0 +1,12 @@
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\wizardworks_backend.exe
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\Data\DataStorage.json
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\wizardworks_backend.dll
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\wizardworks_backend.deps.json
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\wizardworks_backend.runtimeconfig.json
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\wizardworks_backend.pdb
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\sunho\source\repos\wizardworks_backend\wizardworks_backend\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
