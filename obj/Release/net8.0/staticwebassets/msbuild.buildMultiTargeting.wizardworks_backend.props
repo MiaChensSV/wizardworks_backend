@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\wizardworks_backend.props" />
+</Project>
